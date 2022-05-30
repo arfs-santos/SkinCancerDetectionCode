@@ -130,7 +130,7 @@ model.fit(data_train, steps_per_epoch = 8015/32, epochs=100,
 
 #save weigths AlexNet Training
 
-model.save_weights('D:/Google Drive/Projeto_Doutorado (1)/Codigo-Fonte/Arquivos Redes Treinadas/AlexNet-Binary/AlexNet.h5')
+model.save_weights('D:/Google Drive/Projeto_Doutorado (1)/Codigo-Fonte/Arquivos Redes Treinadas/AlexNet-Binary/AlexNet_.h5')
 
 
 #save model AlexNet Training
