@@ -1,4 +1,4 @@
-Projeto de Detecção do Câncer de Pele Maligno como requisito para criação da Tese de Doutorado do aluno Alan rafael Ferreira dos Santos (DCCMAPI - UFMA/UFPI).
+Projeto de Detecção do Câncer de Pele Maligno como requisito para criação da Tese de Doutorado do aluno Alan Rafael Ferreira dos Santos (DCCMAPI - UFMA/UFPI).
 
 O principal viés do projeto é provar que a iluminância e a cor no interior das lesões é um aspecto decisivo no diagnóstico preciso.
 
@@ -15,3 +15,5 @@ Etapas:
   3. Correção Automática de Iluminação e Cor
   4. Desenvolvimento do Modelo 
   5. Testes e Avaliação de Resultados 
+
+Contato: arfs@ufpi.edu.br
