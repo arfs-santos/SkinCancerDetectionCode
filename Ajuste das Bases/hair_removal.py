@@ -54,8 +54,7 @@ for im in data_pad_ufes:
     img = cv2.imread(im, cv2.IMREAD_COLOR)
     grayScale = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     blackhat = cv2.dilate(grayScale,kernel,iterations = 100)
-    blackhat = cv2.morphologyEx(blackhat, cv2.MORPH_BLACKHAT, kernel)
- 
+    blackhat = cv2.morphologyEx(blackhat, cv2.MORPH_BLACKHAT, kernel) 
     #bhg= cv2.GaussianBlur(blackhat,(11,11),cv2.BORDER_DEFAULT)
     ret,mask = cv2.threshold(blackhat,10,255,cv2.THRESH_BINARY)
     dst = inpaint.inpaint_biharmonic(img, mask, multichannel=(True))
