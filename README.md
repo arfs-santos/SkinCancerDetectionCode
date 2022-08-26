@@ -1,0 +1,1 @@
+Codificação Utilizada no Linux.
