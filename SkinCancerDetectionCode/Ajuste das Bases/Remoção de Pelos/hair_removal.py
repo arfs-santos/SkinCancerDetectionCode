@@ -29,19 +29,26 @@ for name in path_pad_ufes:
 
 
 kernel_fill = cv2.getStructuringElement(1,(23,23))
-kernel_erode_dilatate = cv2.getStructuringElement(cv2.MORPH_RECT,(5,5))
-kernel = cv2.getStructuringElement(cv2.MORPH_RECT,(21,21))
+kernel_dilatate = cv2.getStructuringElement(2,(3,3))
+kernel = cv2.getStructuringElement(2,(21,21))
+
+scala = 50 
+
+
   
 i = 0
     
 for im in data_isic:
     
     img = cv2.imread(im, cv2.IMREAD_COLOR)
+    largura = int(im.shape[1] * scala / 100)
+    altura = int(im.shape[0] * scala / 100)
+    dim = (largura, altura)
     grayScale = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
     blackhat = cv2.morphologyEx(grayScale, cv2.MORPH_BLACKHAT, kernel_fill)
-    bhg= cv2.GaussianBlur(blackhat,(15,15),cv2.BORDER_DEFAULT)
+    bhg= cv2.GaussianBlur(blackhat,(17,17),cv2.BORDER_DEFAULT)
     ret,mask = cv2.threshold(bhg,10,255,cv2.THRESH_BINARY)
-    mask = cv2.dilate(mask, kernel_erode_dilatate, iterations = 5)
+    mask = cv2.dilate(mask, kernel_dilatate, iterations = 4)
     mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
     num_non_zero = cv2.countNonZero(mask)
     if num_non_zero > 50:
